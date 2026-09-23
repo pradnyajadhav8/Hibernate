@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+
+<session-factory>
+
+<!-- Database property -->
+<proprty name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</proprty>
+<proprty name="hibernate.connection.url">jdbc:mysql://localhost:3306/hijap89</proprty>
+<proprty name="hibernate.connection.username">root</proprty>
+<proprty name="hibernate.connection.password">Pradnya@01</proprty>
+
+
+<!--   -->
+</session-factory>
+
+</hibernate-configuration>

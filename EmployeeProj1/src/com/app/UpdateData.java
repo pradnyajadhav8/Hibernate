@@ -1,0 +1,15 @@
+package com.app;
+
+import org.hibernate.cfg.Configuration;
+
+public class UpdateData {
+
+	public static void main(String[] args) {
+		
+		Configuration configuration=new Configuration();
+		configuration.configure("hibernate.cfg.xml");
+		
+		
+		
+	}
+}

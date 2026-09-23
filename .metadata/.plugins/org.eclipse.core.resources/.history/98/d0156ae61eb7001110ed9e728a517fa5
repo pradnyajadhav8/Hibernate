@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+
+<session-factory>
+
+<!-- Database property -->
+<proprty name=""></proprty>
+<proprty name=""></proprty>
+<proprty name=""></proprty>
+<proprty name=""></proprty>
+
+</session-factory>
+
+</hibernate-configuration>
