@@ -30,6 +30,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		session.delete(emp);
 		Transaction tx =session.beginTransaction();
 		tx.commit();
+		System.out.println("Deleted Succesfully..!");
 	}
 
 	@Override
@@ -49,8 +50,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 		else {
 			System.out.println("Employee Not found..!");
-		}
-		
+		}	
 	}
 
 	@Override
@@ -70,8 +70,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 		else {
 			System.out.println("Employee Not found..!");
-		}
-		
+		}	
 	}
 
 	@Override
@@ -101,5 +100,5 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		
 		return list;
 	}
-
+	
 }

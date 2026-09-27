@@ -38,10 +38,12 @@ public class App {
 			default:
 				System.out.println("Invalid Input...!");
 			}
+			
 		} while (true);
 	}
 
 	private static void showMenu() {
+		
 		System.out.println("______________________________________________________________________");
 		System.out.println("         				 Employee Option");
 		System.out.println("______________________________________________________________________");
@@ -56,21 +58,17 @@ public class App {
 	private static Employee input() {
 
 		System.out.println("Enter Name:");
-		String name = scanner.nextLine();
-
+		String name = scanner.next();
 		scanner.nextLine();
 		System.out.println("Enter Salary:");
 		Double salary = scanner.nextDouble();
 		scanner.nextLine();
-
-//		Employee emp=new Employee(name,salary);
-//		emp.setName(name);
-//		emp.setSalary(salary); 
-//		return emp;
+	
 		return new Employee(name, salary);
 	}
 
 	private static void addEmployee() {
+		
 		Employee emp = input();
 		EmployeeDAO employee = EmployeeDAOFactory.getEmployeeFactory();
 		employee.saveEmployee(emp);
@@ -78,6 +76,7 @@ public class App {
 	}
 
 	private static void deleteEmployee() {
+		
 		System.out.println("Enter id:");
 		int id = scanner.nextInt();
 		EmployeeDAO employee = EmployeeDAOFactory.getEmployeeFactory();
@@ -85,6 +84,7 @@ public class App {
 	}
 
 	private static void updateEmployee() {
+		
 		System.out.println("Enter id:");
 		int id = scanner.nextInt();
 		EmployeeDAO employee = EmployeeDAOFactory.getEmployeeFactory();
@@ -108,6 +108,7 @@ public class App {
 			System.out.printf("%15.2f", emp.getSalary());
 
 			System.out.println();
+			
 		}
 	}
 
