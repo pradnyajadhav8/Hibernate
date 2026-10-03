@@ -15,7 +15,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public void saveEmployee(Employee employee) {
-		try (SessionFactory factory = HibernateUtility.getSessionFactory(); Session session = factory.openSession();) {
+		SessionFactory factory = HibernateUtility.getSessionFactory();
+		try (Session session = factory.openSession();) {
 
 			session.save(employee);
 			Transaction tx = session.beginTransaction();
@@ -29,21 +30,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public void deleteEmployee(int id) {
 
-		try (SessionFactory factory = HibernateUtility.getSessionFactory(); Session session = factory.openSession();) {
+		SessionFactory factory = HibernateUtility.getSessionFactory();
+		try (Session session = factory.openSession();) {
 
 			Employee employee = getEmployee(id);
 			session.delete(employee);
 			Transaction tx = session.beginTransaction();
 			tx.commit();
-		} catch (EmployeeDAOException e) {
+		} catch (Exception e) {
 			EmployeeDAOException ex = new EmployeeDAOException("Failed to Delete...!", e);
+			throw ex;
 		}
 	}
 
 	@Override
 	public void updateEmployee(int id, Employee employee) {
-
-		try (SessionFactory factory = HibernateUtility.getSessionFactory(); Session session = factory.openSession();) {
+		SessionFactory factory = HibernateUtility.getSessionFactory();
+		try (Session session = factory.openSession();) {
 
 			Employee emp = (Employee) session.get(Employee.class, id);
 
@@ -63,7 +66,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public void updateEmployee(int id, String name, Double salary) {
 
-		try (SessionFactory factory = HibernateUtility.getSessionFactory(); Session session = factory.openSession();) {
+		SessionFactory factory = HibernateUtility.getSessionFactory();
+		try (Session session = factory.openSession();) {
 
 			Employee emp = (Employee) session.get(Employee.class, id);
 
@@ -82,37 +86,40 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	@Override
 	public Employee getEmployee(int id) {
-		
-		try (SessionFactory factory = HibernateUtility.getSessionFactory(); Session session = factory.openSession();) {
+		SessionFactory factory = HibernateUtility.getSessionFactory();
+		try (Session session = factory.openSession();) {
 
+			System.out.println("++++++++++++++++++++++++++++");
 			Employee emp = (Employee) session.load(Employee.class, id);
-
+			System.out.println("=====================================");
 			if (emp != null) {
 				return emp;
 			} else {
 				System.out.println("Employee not found..!");
 			}
-		} catch (EmployeeDAOException e) {
+		} catch (Exception e) {
+		
 			EmployeeDAOException ex = new EmployeeDAOException("Failed to Get Employee!", e);
+			throw ex;
 		}
 		return null;
 	}
 
 	@Override
 	public List<Employee> getAllEmployee() {
-		
-		try( SessionFactory factory=HibernateUtility.getSessionFactory();
-				Session session=factory.openSession();){
-			
+		SessionFactory factory = HibernateUtility.getSessionFactory();
+		try (Session session = factory.openSession();) {
+
 			Query query = session.createQuery("from Employee e");
-			
-			List<Employee> list= query.list();
-			
+
+			List<Employee> list = query.list();
+
 			return list;
-		}catch (EmployeeDAOException e) {
+		} catch (EmployeeDAOException e) {
 			EmployeeDAOException ex = new EmployeeDAOException("Failed to Read..!", e);
 		}
 		return null;
 	}
 
+	
 }

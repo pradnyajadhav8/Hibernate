@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="com.dao.EmployeeDAO"/>
     <fullyQualifiedTypeName name="com.dao.EmployeeDAOFactory"/>
     <fullyQualifiedTypeName name="com.Exception.EmployeeDAOException"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
     <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
     <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
@@ -22,4 +21,16 @@
     <fullyQualifiedTypeName name="com.Exception.EmployeeException"/>
     <fullyQualifiedTypeName name="com.validator.EmployeeValidator"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.persistence.Inheritance"/>
+    <fullyQualifiedTypeName name="javax.persistence.InheritanceType"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.entity.Payment"/>
+    <fullyQualifiedTypeName name="javax.persistence.DiscriminatorColumn"/>
+    <fullyQualifiedTypeName name="javax.persistence.DiscriminatorValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="java.lang.Deprecated"/>
+    <fullyQualifiedTypeName name="com.entity.Department"/>
 </qualifiedTypeNameHistroy>

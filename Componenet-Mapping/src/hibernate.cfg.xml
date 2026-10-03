@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="hibernate.connection.class_driver"> com.mysql.cj.jdbc.Driver </property>
+		<property name="hibernate.connection.url"> jdbc:mysql://localhost:3306/jap89com01 </property>
+		<property name="hibernate.connection.username"> root </property>
+		<property name="hibernate.connection.password"> Pradnya@01 </property>
+
+		<property name="hibernate.hbm2ddl.auto"> update </property>
+		<property name="hibernate.show_sql"> true </property>
+		<property name="hibernate.formate_sql"> true </property>
+
+		<property name="hibernate.dialect"> org.hibernate.dialect.MySQL8Dialect </property>
+
+		<mapping class="com.entity.Employee"/>
+		<mapping class="com.entity.Address"/>
+		
+	</session-factory>
+
+</hibernate-configuration>
