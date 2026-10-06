@@ -20,7 +20,7 @@ public class Employee {
 	private Address address;//Has-a relationship
 	
 	public Employee() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public Employee(int id, String name, double salary) {
